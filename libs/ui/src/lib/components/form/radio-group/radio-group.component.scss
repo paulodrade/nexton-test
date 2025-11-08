@@ -1,0 +1,153 @@
+@use '../form' as form;
+
+/* ==========================================================================
+   = HOST STYLES
+   Styles for the radio group component host
+   ========================================================================== */
+:host {
+  @include form.host-styles;
+  flex-direction: column;
+  width: auto;
+}
+
+/* ==========================================================================
+   = RADIO CONTAINER
+   Main container styles for radio
+   ========================================================================== */
+.radio {
+  padding: 0 var(--nex-radio-box-padding-inline, 12px);
+  border: var(--nex-radio-box-border-width, 1px) solid
+    var(--nex-radio-box-border-color, #cccccc);
+  display: flex;
+  align-items: center;
+  border-radius: var(--nex-radio-border-radius, 32px);
+  position: relative;
+  height: var(--nex-radio-box-height, 38px);
+  color: var(--nex-radio-label-color, #181a1b);
+
+  & + .radio {
+    margin-left: var(--nex-radio-box-gap, 8px);
+  }
+
+  &__icon {
+    height: var(--nex-radio-icon-height, 20px);
+    margin: 0 var(--nex-radio-input-margin-inline-end, 8px) 0 0;
+
+    ::ng-deep svg,
+    ::ng-deep svg * {
+      fill: var(--nex-radio-icon-color, #181a1b);
+    }
+  }
+
+  &__group {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* --------------------------------------------------------------
+     = RADIO INPUT
+     Styles for the radio input element
+     -------------------------------------------------------------- */
+  &__input {
+    opacity: 1;
+    appearance: none;
+    -webkit-appearance: none;
+    border: var(--nex-radio-input-border-width, 1px) solid
+      var(--nex-radio-input-border-color, #000000);
+    width: var(--nex-radio-input-size, 13px);
+    height: var(--nex-radio-input-size, 13px);
+    border-radius: var(--nex-radio-input-border-radius, 50%);
+    padding: 0;
+    margin: 0 var(--nex-radio-input-margin-inline-end, 8px) 0 0;
+    position: relative;
+  }
+
+  &:has(nex-icon) {
+    .radio__input {
+      visibility: hidden;
+      position: absolute;
+      top: -100px;
+    }
+  }
+
+  /* --------------------------------------------------------------
+     = STATE: CHECKED
+     Styles applied when radio is checked
+     -------------------------------------------------------------- */
+  &:has(:checked) {
+    color: var(--nex-radio-label-color-checked, #1db496);
+    border-color: var(--nex-radio-box-border-color-checked, #1db496);
+    background: var(--nex-radio-box-bg-checked, #1db4961c);
+
+    .radio {
+      &__input {
+        border-color: var(--nex-radio-input-border-color-checked, #1db496);
+
+        &:checked::after {
+          content: '';
+          position: absolute;
+          inset: var(--nex-radio-input-dot-inset-checked, 3px);
+          background: var(--nex-radio-input-dot-bg-checked, #1db496);
+          border-radius: var(--nex-radio-input-dot-border-radius, 50%);
+        }
+      }
+      &__icon {
+        ::ng-deep svg,
+        ::ng-deep svg * {
+          fill: var(--nex-radio-icon-color-checked, #1db496);
+        }
+      }
+    }
+  }
+
+  /* --------------------------------------------------------------
+     = STATE: DISABLED
+     Styles applied when radio is disabled
+     -------------------------------------------------------------- */
+  &:has(:disabled) {
+    color: var(--nex-radio-label-color-disabled, #cccccc);
+    border-color: transparent;
+    background: var(--nex-radio-box-bg-disabled, #f8f8f8);
+    cursor: not-allowed;
+
+    .radio__input {
+      border-color: var(--nex-radio-input-border-color-disabled, #cccccc);
+      background: var(--nex-radio-input-bg-disabled, #f8f8f8);
+      cursor: not-allowed;
+
+      &:checked::after {
+        content: '';
+        position: absolute;
+        inset: var(--nex-radio-input-dot-inset-disabled, 3px);
+        background: var(--nex-radio-input-dot-bg-disabled, #cccccc);
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   = ERROR STATE
+   Styles for error state in radio group
+   ========================================================================== */
+:host:has(nex-error) {
+  ::ng-deep {
+    .radio:has(.radio__input:not(:disabled)) {
+      color: var(--nex-radio-label-color-error, #ed4c5c);
+      border-color: var(--nex-radio-box-border-color-error, #ed4c5c);
+
+      .radio__input {
+        border-color: var(--nex-radio-input-border-color-error, #ed4c5c);
+        color: var(--nex-radio-input-color-error, #ed4c5c);
+
+        &:checked::after {
+          background: var(--nex-radio-input-dot-bg-error, #ed4c5c);
+        }
+      }
+
+      &:has(:checked) {
+        background: var(--nex-radio-box-bg-error-checked, #ed4c5c1a);
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  border-right: var(--nex-menu-list-list-border-width, 1px) solid
+    var(--nex-menu-list-list-border-color, #e5e5e5);
+
+  ::ng-deep {
+    [nex-menu-item] {
+      & + [nex-menu-item] {
+        margin-top: var(--nex-menu-list-item-gap, 8px);
+      }
+    }
+  }
+}

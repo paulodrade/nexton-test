@@ -1,0 +1,53 @@
+/* ==========================================================================
+   DARK THEME TOKENS - NexUI Radio
+   ========================================================================== */
+
+.nex-theme-dark {
+  // =========================
+  // LABEL COLORS
+  // =========================
+  --nex-radio-label-color: var(--nex-semantic-fg-default);
+  --nex-radio-label-color-checked: var(--nex-semantic-primary);
+  --nex-radio-label-color-disabled: var(--nex-color-bg-elevated);
+  --nex-radio-label-color-error: var(--nex-semantic-error);
+
+  // =========================
+  // BOX
+  // =========================
+  --nex-radio-box-border-color: var(--nex-semantic-border-default);
+  --nex-radio-box-border-color-checked: var(--nex-semantic-primary);
+  --nex-radio-box-border-color-disabled: var(--nex-color-disabled);
+  --nex-radio-box-border-color-error: var(--nex-semantic-error);
+
+  --nex-radio-box-bg-checked: rgba(
+    var(--nex-semantic-primary-rgb, 29, 180, 150),
+    0.11
+  );
+  --nex-radio-box-bg-disabled: var(--nex-color-disabled);
+  --nex-radio-box-bg-error-checked: rgba(
+    var(--nex-semantic-error-rgb, 237, 76, 92),
+    0.1
+  );
+
+  // =========================
+  // ICON
+  // =========================
+  --nex-radio-icon-color: var(--nex-semantic-fg-default);
+
+  // =========================
+  // INPUT
+  // =========================
+  --nex-radio-input-border-color: var(--nex-semantic-border-default);
+  --nex-radio-input-border-color-checked: var(--nex-semantic-primary);
+  --nex-radio-input-border-color-disabled: var(--nex-color-bg-elevated);
+  --nex-radio-input-border-color-error: var(--nex-semantic-error);
+
+  --nex-radio-input-bg-disabled: var(--nex-color-disabled);
+
+  // =========================
+  // DOT STATES
+  // =========================
+  --nex-radio-input-dot-bg-checked: var(--nex-semantic-primary);
+  --nex-radio-input-dot-bg-disabled: var(--nex-color-bg-elevated);
+  --nex-radio-input-dot-bg-error: var(--nex-semantic-error);
+}

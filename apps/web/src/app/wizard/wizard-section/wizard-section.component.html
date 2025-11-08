@@ -1,0 +1,48 @@
+<section class="wizard-section">
+  <!-- Section form -->
+  <nex-form class="wizard-section__form-fields" [fields]="fields"></nex-form>
+
+  <!-- Section actions (Next, Previous, Submit) -->
+  <div class="wizard-section__actions">
+    <!-- Next button -->
+    @if (!last) {
+    <button
+      nex-button
+      type="button"
+      size="lg"
+      (click)="goToNextSection()"
+      [disabled]="!!isAllFieldsValid()"
+    >
+      Next
+    </button>
+    }
+
+    <!-- Previous button -->
+    @if (!first) {
+    <button
+      nex-button
+      type="button"
+      size="lg"
+      theme="secondary"
+      variant="outline"
+      [disabled]="(isBusy$ | async) ?? false"
+      (click)="goToPreviousSection()"
+    >
+      Previous
+    </button>
+    }
+
+    <!-- Submit button -->
+    @if (last) {
+    <button
+      nex-button
+      type="submit"
+      size="lg"
+      [disabled]="(isBusy$ | async) ?? false"
+      [loading]="(isBusy$ | async) ?? false"
+    >
+      Submit
+    </button>
+    }
+  </div>
+</section>

@@ -1,0 +1,7 @@
+<span class="button__icon">
+  @if(loading) {
+  <nex-icon icon="refresh" [spin]="true"></nex-icon>
+  }
+  <ng-content select="nex-icon"></ng-content>
+</span>
+<span class="button__text"><ng-content></ng-content></span>

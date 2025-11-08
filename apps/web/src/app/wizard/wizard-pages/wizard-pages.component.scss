@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.step {
+  display: flex;
+
+  nex-menu-list {
+    padding: 40px 40px 40px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    // padding: 40px;
+  }
+}
+
+.form-fields {
+  width: 100%;
+}

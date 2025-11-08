@@ -1,0 +1,31 @@
+/* ==========================================================================
+   DARK THEME TOKENS - NexUI Checkbox
+   ========================================================================== */
+
+.nex-theme-dark {
+  // =========================
+  // INPUT
+  // =========================
+  --nex-checkbox-input-border-color: var(--nex-semantic-border-default);
+
+  // =========================
+  // CHECKED STATE
+  // =========================
+  --nex-checkbox-input-checked-border-color: var(--nex-semantic-primary);
+  --nex-checkbox-input-checked-bg: var(--nex-semantic-primary);
+  --nex-checkbox-input-checked-icon-color: var(--nex-semantic-fg-inverse);
+
+  // =========================
+  // ERROR STATE
+  // =========================
+  --nex-checkbox-input-error-border-color: var(--nex-semantic-error);
+  --nex-checkbox-input-error-color: var(--nex-semantic-error);
+
+  // =========================
+  // DISABLED STATE
+  // =========================
+  --nex-checkbox-disabled-border-color: var(--nex-color-disabled);
+  --nex-checkbox-disabled-text-color: var(--nex-color-disabled);
+  --nex-checkbox-input-disabled-bg: var(--nex-color-disabled);
+  --nex-checkbox-input-checked-disabled-border-color: var(--nex-color-disabled);
+}

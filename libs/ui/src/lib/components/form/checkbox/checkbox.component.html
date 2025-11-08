@@ -1,0 +1,15 @@
+<!-- Checkbox input and label -->
+<label class="checkbox label">
+  <input
+    class="checkbox__input input"
+    type="checkbox"
+    [checked]="checked"
+    [disabled]="disabled"
+    [required]="required"
+    (change)="onInputChange($event.target.value)"
+  />
+  {{ label }}
+</label>
+
+<!-- Error message slot -->
+<ng-content select="nex-error"></ng-content>

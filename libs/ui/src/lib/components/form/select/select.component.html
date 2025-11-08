@@ -1,0 +1,34 @@
+<!-- Label block -->
+@if(label){
+<nex-label>{{ label }}</nex-label>
+}
+
+<!-- Projected label (optional) -->
+<ng-content select="nex-label"></ng-content>
+
+<!-- Select field with options and chevron icon -->
+<div class="select__container">
+  <select
+    class="select"
+    [disabled]="disabled"
+    [required]="required"
+    (change)="onInputChange($any($event.target).value)"
+  >
+    @if (placeholder) {
+    <option selected hidden>
+      {{ placeholder }}
+    </option>
+    } @for (option of options; track option.value) {
+    <option [value]="option.value">
+      {{ option.label }}
+    </option>
+    }
+  </select>
+
+  <div class="select__chevron">
+    <nex-icon icon="chevron-down"></nex-icon>
+  </div>
+</div>
+
+<!-- Error message slot -->
+<ng-content select="nex-error"></ng-content>

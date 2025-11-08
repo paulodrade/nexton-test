@@ -1,0 +1,89 @@
+/* ==========================================================================
+   = HOST STYLES
+   Styles for the select component host
+   ========================================================================== */
+@use '../form' as form;
+
+:host {
+  @include form.host-styles;
+  position: relative;
+  flex-direction: column;
+
+  &:has(:disabled) {
+    .select {
+      & + .select__chevron {
+        background: var(--nex-select-box-bg-disabled, #f8f8f8);
+      }
+    }
+  }
+
+  &:has(nex-error) {
+    .select {
+      border-color: var(--nex-select-box-border-color-error, #ed4c5c);
+      color: var(--nex-select-label-color-error, #ed4c5c);
+
+      & + .select__chevron {
+        background: var(--nex-select-box-bg, #fff);
+
+        ::ng-deep svg {
+          fill: var(--nex-select-chevron-fill-error, #ed4c5c);
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   = SELECT FIELD
+   Styles for the select element and its container
+   ========================================================================== */
+.select {
+  opacity: 1;
+  color: var(--nex-select-label-color, #000000);
+  min-height: var(--nex-select-box-min-height, 48px);
+  padding: 0 var(--nex-select-box-padding-inline, 12px);
+  border-radius: var(--nex-select-box-border-radius, 4px);
+  border: var(--nex-select-box-border-width, 1px) solid
+    var(--nex-select-box-border-color, #cccccc);
+  background: var(--nex-select-box-bg, #fff);
+  width: 100%;
+
+  /* --------------------------------------------------------------
+     = CONTAINER
+     Styles for the select container
+     -------------------------------------------------------------- */
+  &__container {
+    position: relative;
+  }
+
+  &:focus {
+    border-color: var(--nex-select-box-border-color-focus, #1db496);
+  }
+
+  &:disabled {
+    background: var(--nex-select-box-bg-disabled, #f8f8f8);
+    color: var(--nex-select-label-color-disabled, #cccccc);
+    cursor: not-allowed;
+
+    & + .select__chevron {
+      ::ng-deep svg {
+        fill: var(--nex-select-chevron-fill-disabled, var(--nex-color-surface));
+      }
+    }
+  }
+
+  /* --------------------------------------------------------------
+     = CHEVRON ICON
+     Styles for the select chevron icon
+     -------------------------------------------------------------- */
+  &__chevron {
+    position: absolute;
+    right: var(--nex-select-chevron-position-inline-end, 1px);
+    top: var(--nex-select-chevron-position-block-start, 5px);
+    padding: var(--nex-select-chevron-padding, 10px);
+    height: var(--nex-select-chevron-height, 16px);
+    z-index: 1;
+    background: var(--nex-select-chevron-bg, #ffffff);
+    pointer-events: none;
+  }
+}

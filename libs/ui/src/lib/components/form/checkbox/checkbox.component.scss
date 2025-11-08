@@ -1,0 +1,107 @@
+@use '../form' as form;
+
+/* ==========================================================================
+   = HOST STYLES
+   Base styles for the checkbox component host
+   ========================================================================== */
+:host {
+  @include form.host-styles;
+  width: auto;
+  flex-direction: column;
+
+  &:has(nex-error) {
+    color: var(--nex-checkbox-error-color, #ed4c5c);
+
+    .checkbox__input {
+      border-color: var(--nex-checkbox-input-error-border-color, #ed4c5c);
+      color: var(--nex-checkbox-input-error-color, #ed4c5c);
+    }
+  }
+}
+
+/* ==========================================================================
+   = CHECKBOX CONTAINER
+   Main container styles for checkbox
+   ========================================================================== */
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  /* --------------------------------------------------------------
+     = CHECKBOX INPUT
+     Styles for the checkbox input element
+     -------------------------------------------------------------- */
+  &__input {
+    appearance: none;
+    -webkit-appearance: none;
+    border: var(--nex-checkbox-input-border-width, 2px) solid
+      var(--nex-checkbox-input-border-color, #000000);
+    width: var(--nex-checkbox-input-size, 13px);
+    height: var(--nex-checkbox-input-size, 13px);
+    padding: 0;
+    margin: 0 var(--nex-checkbox-input-margin, 8px) 0 0;
+    position: relative;
+  }
+
+  /* --------------------------------------------------------------
+     = STATE: CHECKED
+     Styles applied when checkbox is checked
+     -------------------------------------------------------------- */
+  &:has(input:checked) {
+    .checkbox__input {
+      /* Input styles when checked */
+      border-color: var(--nex-checkbox-input-checked-border-color, #1db496);
+      background: var(--nex-checkbox-input-checked-bg, #1db496);
+
+      &:checked::after {
+        /* Icon indicator for checked state */
+        content: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjZmZmZmZmIj48cGF0aCBkPSJNMzgyLTI0MCAxNTQtNDY4bDU3LTU3IDE3MSAxNzEgMzY3LTM2NyA1NyA1Ny00MjQgNDI0WiIgZmlsbD0iI2ZmZmZmZjAwMCIvPjwvc3ZnPg==');
+        position: absolute;
+        transform: scale(0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--nex-checkbox-input-checked-icon-color, #ffffff);
+        top: calc(-1 * var(--nex-checkbox-input-border-width, 2px));
+        left: calc(-1 * var(--nex-checkbox-input-border-width, 2px));
+        width: var(--nex-checkbox-input-size, 13px);
+        height: var(--nex-checkbox-input-size, 13px);
+        background: var(--nex-checkbox-input-checked-bg, #1db496);
+        margin-top: 1px;
+      }
+    }
+  }
+
+  /* --------------------------------------------------------------
+     = STATE: DISABLED
+     Styles applied when checkbox is disabled
+     -------------------------------------------------------------- */
+  &:has(input:disabled) {
+    color: var(--nex-checkbox-disabled-text-color, #8b92a0);
+    cursor: not-allowed;
+
+    .checkbox__input {
+      /* Input styles when disabled */
+      border-color: var(--nex-checkbox-disabled-border-color, #8b92a0);
+      cursor: not-allowed;
+
+      &:checked {
+        /* Container when checkbox input is disabled & checked */
+        background: var(--nex-checkbox-input-disabled-bg, #cccccc);
+        border-color: var(
+          --nex-checkbox-input-checked-disabled-border-color,
+          #cccccc
+        );
+
+        &::after {
+          /* Icon indicator for disabled & checked state */
+          background: var(--nex-checkbox-input-disabled-bg, #cccccc);
+          border-color: var(
+            --nex-checkbox-input-checked-disabled-border-color,
+            #cccccc
+          );
+        }
+      }
+    }
+  }
+}

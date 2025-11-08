@@ -1,0 +1,18 @@
+/* ==========================================================================
+   DARK THEME TOKENS - NexUI Menu List & Menu Item
+   ========================================================================== */
+
+.nex-theme-dark {
+  // =========================
+  // MENU LIST
+  // =========================
+  --nex-menu-list-list-border-color: var(--nex-semantic-border-default);
+
+  // =========================
+  // MENU ITEM
+  // =========================
+  --nex-menu-item-item-color: var(--nex-semantic-fg-default);
+  --nex-menu-item-item-color-checked: var(--nex-semantic-primary);
+  --nex-menu-item-item-border-color-checked: var(--nex-semantic-primary);
+  --nex-menu-item-item-bg-checked: rgba(var(--nex-semantic-primary-rgb), 0.11);
+}

@@ -1,0 +1,30 @@
+/* ==========================================================================
+   DARK THEME TOKENS - NexUI Button
+   ========================================================================== */
+
+.nex-theme-dark {
+  // =========================
+  // LABEL COLORS
+  // =========================
+  --nex-button-label-color: var(--nex-semantic-fg-default);
+  --nex-button-label-color-disabled: var(--nex-color-bg-elevated);
+  --nex-button-label-color-primary: var(--nex-semantic-fg-inverse);
+  --nex-button-label-color-secondary: var(--nex-color-bg-default);
+  --nex-button-label-color-destructive: var(--nex-semantic-fg-inverse);
+  --nex-button-label-color-link: var(--nex-semantic-primary);
+
+  // =========================
+  // BOX BACKGROUND
+  // =========================
+  --nex-button-box-bg-primary: var(--nex-semantic-primary);
+  --nex-button-box-bg-secondary: var(--nex-color-fg-default);
+  --nex-button-box-bg-destructive: var(--nex-semantic-destructive);
+  --nex-button-box-bg-link: transparent;
+  --nex-button-box-bg-disabled: var(--nex-color-disabled);
+
+  // =========================
+  // BORDER
+  // =========================
+  --nex-button-box-border-color: var(--nex-color-border);
+  --nex-button-box-border: 1px solid var(--nex-semantic-border-default);
+}

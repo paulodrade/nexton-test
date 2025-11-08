@@ -1,0 +1,14 @@
+.wizard-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 40px;
+  gap: 12px;
+  height: 100vh;
+
+  &__actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+}

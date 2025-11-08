@@ -1,0 +1,23 @@
+:host {
+  white-space: nowrap;
+  height: var(--nex-menu-item-item-height, 48px);
+  padding: var(--nex-menu-item-item-padding, 0 8px);
+  min-width: var(--nex-menu-item-item-min-width, 250px);
+  text-decoration: none;
+  color: var(--nex-menu-item-item-color, #181a1b);
+  display: flex;
+  align-items: center;
+  border-radius: var(--nex-menu-item-item-radius, 8px 0 0 8px);
+
+  &.active {
+    color: var(--nex-menu-item-item-color-checked, #1db496);
+    border-right: 2px solid
+      var(--nex-menu-item-item-border-color-checked, #1db496);
+    background: var(--nex-menu-item-item-bg-checked, #1db4961c);
+    cursor: default;
+  }
+
+  &:hover:not(.active) {
+    opacity: var(--nex-menu-item-item-opacity-hover, 0.6);
+  }
+}

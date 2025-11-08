@@ -1,0 +1,84 @@
+[
+  {
+    "id": "software-request",
+    "icon": "apps",
+    "title": "Software Request",
+    "sections": [
+      {
+        "id": "requested-item",
+        "title": "Requested Item",
+        "fields": [
+          {
+            "id": 1758177604,
+            "label": "Item Name",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": 75484637462,
+            "label": "Quantity",
+            "type": "number",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "vendor-info",
+        "title": "Vendor Information",
+        "fields": [
+          {
+            "id": 4957463729,
+            "label": "Vendor Name",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": 8462736152,
+            "label": "Vendor Location",
+            "type": "radio",
+            "required": true,
+            "options": ["USA", "UK", "Other"]
+          },
+          {
+            "id": 6482937561,
+            "label": "Website",
+            "type": "text",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hardware-request",
+    "icon": "servers",
+    "title": "Hardware Request",
+    "sections": [
+      {
+        "id": "device",
+        "title": "Device",
+        "fields": [
+          {
+            "id": 1111,
+            "label": "Model",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": 2222,
+            "label": "Units",
+            "type": "number",
+            "required": true
+          },
+          {
+            "id": 3333,
+            "label": "Region",
+            "type": "radio",
+            "required": false,
+            "options": ["USA", "UK", "Other"]
+          }
+        ]
+      }
+    ]
+  }
+]

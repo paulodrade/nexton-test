@@ -1,0 +1,12 @@
+<label class="checkbox-dark-theme">
+  <input
+    type="checkbox"
+    [(ngModel)]="isDarkThemeEnabled"
+    (ngModelChange)="toggleDarkTheme()"
+  />
+  Enable Dark Theme
+</label>
+
+<div class="router-content">
+  <router-outlet></router-outlet>
+</div>

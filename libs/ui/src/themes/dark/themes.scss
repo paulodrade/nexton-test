@@ -1,0 +1,24 @@
+// NexUI Theme Entrypoint
+
+// =========================
+// TOKENS
+// =========================
+@import './tokens/_base.scss';
+@import './tokens/_semantic.dark.scss';
+
+// =========================
+// COMPONENTS
+// =========================
+@import './components/button.scss';
+@import './components/checkbox.scss';
+@import './components/input.scss';
+@import './components/radio.scss';
+@import './components/card.scss';
+@import './components/select.scss';
+@import './components/label.scss';
+@import './components/menu-list.scss';
+
+body.nex-theme-dark {
+  background: var(--nex-theme-bg);
+  color: var(--nex-color-fg-default);
+}

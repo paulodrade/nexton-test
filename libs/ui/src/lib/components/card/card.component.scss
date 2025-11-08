@@ -1,0 +1,32 @@
+.nex-card {
+  background: var(--nex-card-box-bg, #ffffff);
+  border-radius: var(--nex-card-box-border-radius, 8px);
+  box-shadow: var(--nex-card-box-shadow, 0px 2px 4px 0px #00000012);
+
+  padding: var(--nex-card-box-padding, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nex-card-box-gap, 1rem);
+}
+
+.nex-card-header {
+  background: var(--nex-card-header-bg, transparent);
+  color: var(--nex-card-header-label-color, var(--nex-semantic-fg-default));
+  font-size: var(--nex-card-header-label-font-size, 1.125rem);
+  font-weight: var(--nex-card-header-label-font-weight, 600);
+  padding-bottom: var(--nex-card-header-label-padding-block-end, 0.5rem);
+}
+
+.nex-card-content {
+  color: var(--nex-card-content-label-color, var(--nex-semantic-fg-default));
+  font-size: var(--nex-card-content-label-font-size, 1rem);
+  flex: 1 1 auto;
+}
+
+.nex-card-footer {
+  background: var(--nex-card-footer-bg, transparent);
+  color: var(--nex-card-footer-label-color, var(--nex-semantic-fg-muted));
+  font-size: var(--nex-card-footer-label-font-size, 0.95rem);
+  font-weight: var(--nex-card-footer-label-font-weight, 400);
+  padding-top: var(--nex-card-footer-label-padding-block-start, 0.5rem);
+}

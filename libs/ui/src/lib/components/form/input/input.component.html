@@ -1,0 +1,22 @@
+<!-- Label block -->
+@if(label){
+<nex-label>{{ label }}</nex-label>
+}
+
+<!-- Projected label (optional) -->
+<ng-content select="nex-label"></ng-content>
+
+<!-- Input field -->
+<input
+  #inputElement
+  class="input"
+  [type]="type"
+  [placeholder]="placeholder"
+  [name]="name"
+  [disabled]="disabled"
+  [required]="required"
+  (change)="onInputChange($any($event.target).value)"
+/>
+
+<!-- Error message slot -->
+<ng-content select="nex-error"></ng-content>

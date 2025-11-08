@@ -1,0 +1,8 @@
+@use './form.scss' as *;
+
+// Estilos específicos do componente FormComponent
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nex-form-item-gap, 12px);
+}

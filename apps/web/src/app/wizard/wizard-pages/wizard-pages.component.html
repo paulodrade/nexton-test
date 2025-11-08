@@ -1,0 +1,42 @@
+<div class="step">
+  <!-- Sidebar menu with sections -->
+  <nex-menu-list>
+    <!-- Menu item for each section -->
+    @for (section of sections; track section.id) {
+    <div
+      nex-menu-item
+      role="button"
+      tabindex="0"
+      [active]="activeSection?.id === section.id"
+    >
+      {{ section.title }}
+    </div>
+    }
+
+    <!-- Empty state for menu -->
+    @empty {
+    <span nex-menu-item>No sections</span>
+    }
+  </nex-menu-list>
+
+  <!-- Sections content -->
+  <div class="step__content">
+    @for (section of sections; track section.id; let i = $index; let first =
+    $first; let last = $last) {
+    <app-wizard-section
+      [id]="section?.id"
+      [section]="section"
+      [formGroup]="formGroup"
+      [first]="first"
+      [last]="last"
+      (next)="goToNextSection(i)"
+      (previous)="goToPreviousSection(i)"
+    ></app-wizard-section>
+    }
+
+    <!-- Empty state for content -->
+    @empty {
+    <span>No sections available :(</span>
+    }
+  </div>
+</div>

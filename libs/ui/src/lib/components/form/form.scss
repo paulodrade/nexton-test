@@ -1,0 +1,9 @@
+@mixin host-styles {
+  display: inline-flex;
+  width: 100%;
+}
+
+.label,
+.input {
+  font-size: var(--nex-form-label-font-size, 12px);
+}

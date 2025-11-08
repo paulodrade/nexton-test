@@ -1,0 +1,138 @@
+@mixin button-theme($bgColor, $textColor, $borderColor, $borderWidth) {
+  &.button {
+    &--variant-solid {
+      background-color: $bgColor;
+      color: $textColor;
+
+      ::ng-deep svg,
+      ::ng-deep svg * {
+        fill: $textColor;
+      }
+    }
+    &--variant-outline {
+      background-color: transparent;
+      color: $bgColor;
+      border: if($borderWidth, $borderWidth, 1px) solid $borderColor;
+
+      ::ng-deep svg,
+      ::ng-deep svg * {
+        fill: $bgColor;
+      }
+    }
+    &--variant-hollow {
+      background-color: transparent;
+      color: $bgColor;
+      border-color: transparent;
+
+      ::ng-deep svg,
+      ::ng-deep svg * {
+        fill: $bgColor;
+      }
+    }
+  }
+}
+
+:host {
+  display: inline-flex;
+  border: var(--nex-button-box-border, 1px solid transparent);
+  border-radius: var(--nex-button-box-border-radius, 4px);
+  align-items: center;
+  transition: var(--nex-button-box-transition, opacity 0.2s ease-in-out);
+  width: auto;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: var(--nex-button-box-hover-opacity, 0.6);
+  }
+
+  &.button {
+    &--light-mode {
+      opacity: var(--nex-button-box-opacity-light-mode, 0.8);
+    }
+
+    &--theme {
+      &-disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+
+        @include button-theme(
+          var(--nex-button-box-bg-disabled, #cccccc),
+          var(--nex-button-label-color-disabled, #ffffff),
+          var(--nex-button-box-bg-disabled, #cccccc),
+          var(--nex-button-box-border-width, 1px)
+        );
+      }
+
+      &-primary {
+        @include button-theme(
+          var(--nex-button-box-bg-primary, #1db496),
+          var(--nex-button-label-color-primary, #ffffff),
+          var(--nex-button-box-bg-primary, #1db496),
+          var(--nex-button-box-border-width, 1px)
+        );
+      }
+
+      &-secondary {
+        @include button-theme(
+          var(--nex-button-box-bg-secondary, #000000),
+          var(--nex-button-label-color-secondary, #ffffff),
+          var(--nex-button-box-border-color, #cccccc),
+          var(--nex-button-box-border-width, 1px)
+        );
+      }
+
+      &-destructive {
+        @include button-theme(
+          var(--nex-button-box-bg-destructive, #ed4c5c),
+          var(--nex-button-label-color-destructive, #ffffff),
+          var(--nex-button-box-bg-destructive, #ed4c5c),
+          var(--nex-button-box-border-width, 1px)
+        );
+      }
+
+      &-link {
+        @include button-theme(
+          var(--nex-button-box-bg-link, transparent),
+          var(--nex-button-label-color-link, #1db496),
+          var(--nex-button-box-border-color, transparent),
+          var(--nex-button-box-border-width, 1px)
+        );
+      }
+    }
+
+    &--size {
+      &-sm {
+        height: var(--nex-button-box-height-sm, 20px);
+        padding: 0 var(--nex-button-box-padding-inline-sm, 6px);
+        font-size: var(--nex-button-label-font-size-sm, 8px);
+      }
+      &-md {
+        height: var(--nex-button-box-height-md, 24px);
+        padding: 0 var(--nex-button-box-padding-inline-md, 8px);
+        font-size: var(--nex-button-label-font-size-md, 10px);
+      }
+      &-lg {
+        height: var(--nex-button-box-height-lg, 32px);
+        padding: 0 var(--nex-button-box-padding-inline-lg, 12px);
+        font-size: var(--nex-button-label-font-size-lg, 12px);
+      }
+      &-xl {
+        height: var(--nex-button-box-height-xl, 40px);
+        padding: 0 var(--nex-button-box-padding-inline-xl, 12px);
+        font-size: var(--nex-button-label-font-size-xl, 14px);
+      }
+    }
+  }
+}
+
+.button {
+  &__icon {
+    margin-right: var(--nex-button-icon-margin-inline-end, 8px);
+    height: var(--nex-button-icon-height, 60%);
+
+    &:empty {
+      margin-right: 0;
+    }
+  }
+}

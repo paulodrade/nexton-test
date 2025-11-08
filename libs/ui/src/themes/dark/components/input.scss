@@ -1,0 +1,32 @@
+/* ==========================================================================
+   DARK THEME TOKENS - NexUI Input
+   ========================================================================== */
+
+.nex-theme-dark {
+  // =========================
+  // LABEL COLORS
+  // =========================
+  --nex-input-label-color: var(--nex-semantic-fg-default);
+  --nex-input-label-color: var(--nex-color-fg-default);
+  --nex-input-label-color-disabled: var(--nex-color-disabled);
+
+  // =========================
+  // BORDER COLORS
+  // =========================
+  --nex-input-input-border-color: var(--nex-semantic-border-default);
+  --nex-input-input-border-color-focus: var(--nex-semantic-primary);
+  --nex-input-input-border-color-error: var(--nex-semantic-error);
+  --nex-input-input-border-color-disabled: var(--nex-color-disabled);
+
+  // =========================
+  // BACKGROUND & TEXT COLORS
+  // =========================
+  --nex-input-input-bg: var(--nex-semantic-bg-default);
+  --nex-input-input-bg-disabled: var(--nex-color-disabled);
+  --nex-input-input-color-disabled: var(--nex-color-bg-elevated);
+
+  // =========================
+  // ERROR STATE
+  // =========================
+  --nex-input-input-color-error: var(--nex-semantic-error);
+}

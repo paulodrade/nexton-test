@@ -1,0 +1,28 @@
+/* ==========================================================================
+   DARK THEME TOKENS - NexUI Card
+   ========================================================================== */
+
+.nex-theme-dark {
+  // =========================
+  // BOX
+  // =========================
+  --nex-card-box-bg: var(--nex-semantic-bg-elevated);
+  --nex-card-box-shadow: 0px 2px 4px 0px #00000080;
+
+  // =========================
+  // HEADER
+  // =========================
+  --nex-card-header-bg: transparent;
+  --nex-card-header-label-color: var(--nex-semantic-fg-default);
+
+  // =========================
+  // CONTENT
+  // =========================
+  --nex-card-content-label-color: var(--nex-semantic-fg-default);
+
+  // =========================
+  // FOOTER
+  // =========================
+  --nex-card-footer-bg: transparent;
+  --nex-card-footer-label-color: var(--nex-semantic-fg-muted);
+}

@@ -1,0 +1,41 @@
+/* ==========================================================================
+   SEMANTIC TOKENS FOR DARK THEME - NexUI
+   ========================================================================== */
+
+.nex-theme-dark {
+  // =========================
+  // BACKGROUND & SURFACES
+  // =========================
+  --nex-semantic-bg-default: var(--nex-color-bg-default);
+  --nex-semantic-bg-elevated: var(--nex-color-bg-elevated);
+  --nex-semantic-bg-subtle: var(--nex-color-bg-subtle);
+  --nex-semantic-surface: var(--nex-color-surface);
+
+  // =========================
+  // TEXT
+  // =========================
+  --nex-semantic-fg-default: var(--nex-color-fg-default);
+  --nex-semantic-fg-muted: var(--nex-color-fg-muted);
+  --nex-semantic-fg-inverse: var(--nex-color-fg-inverse);
+
+  // =========================
+  // BORDERS
+  // =========================
+  --nex-semantic-border-default: var(--nex-color-border);
+  --nex-semantic-border-disabled: var(--nex-color-disabled);
+
+  // =========================
+  // STATES
+  // =========================
+  --nex-semantic-primary: var(--nex-color-primary);
+  --nex-semantic-secondary: var(--nex-color-secondary);
+  --nex-semantic-destructive: var(--nex-color-destructive);
+  --nex-semantic-success: var(--nex-color-success);
+  --nex-semantic-error: var(--nex-color-error);
+  --nex-semantic-disabled: var(--nex-color-disabled);
+
+  // =========================
+  // OTHER
+  // =========================
+  --nex-semantic-shadow: 0px 2px 4px 0px #00000080;
+}

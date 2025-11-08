@@ -1,0 +1,49 @@
+/* ==========================================================================
+   DARK THEME BASE TOKENS - NexUI
+   Palette, typography, spacing, radius
+   ========================================================================== */
+
+:root {
+  // =========================
+  // COLOR PALETTE
+  // =========================
+  --nex-color-bg-default: #181a1b;
+  --nex-color-bg-elevated: #232526;
+  --nex-color-bg-subtle: #222325;
+  --nex-color-fg-default: #f3f4f6;
+  --nex-color-fg-muted: #b0b3b8;
+  --nex-color-fg-inverse: #181a1b;
+  --nex-color-primary: #1db496;
+  --nex-color-secondary: #232526;
+  --nex-color-destructive: #ed4c5c;
+  --nex-color-border: #33363a;
+  --nex-color-disabled: #44474a;
+  --nex-color-surface: #232526;
+  --nex-color-success: #1db496;
+  --nex-color-error: #ed4c5c;
+  --nex-theme-bg: var(--nex-color-bg-default);
+
+  // =========================
+  // TYPOGRAPHY
+  // =========================
+  --nex-font-family: 'Inter', Arial, sans-serif;
+  --nex-font-size-base: 16px;
+  --nex-font-size-sm: 14px;
+  --nex-font-size-xs: 12px;
+
+  // =========================
+  // SPACING
+  // =========================
+  --nex-space-xs: 4px;
+  --nex-space-sm: 8px;
+  --nex-space-md: 16px;
+  --nex-space-lg: 24px;
+
+  // =========================
+  // BORDER RADIUS
+  // =========================
+  --nex-radius-xs: 2px;
+  --nex-radius-sm: 4px;
+  --nex-radius-md: 8px;
+  --nex-radius-lg: 16px;
+}

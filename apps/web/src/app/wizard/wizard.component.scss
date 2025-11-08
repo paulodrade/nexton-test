@@ -1,0 +1,21 @@
+/* 
+  Host styles for the wizard component.
+  Centers the content vertically and horizontally, sets max width for layout consistency.
+*/
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 1029px;
+  margin: 0 auto;
+}
+
+/* 
+  Ensures the wizard content takes full width of the container.
+*/
+.wizard-content {
+  width: 100%;
+}

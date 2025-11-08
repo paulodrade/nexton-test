@@ -1,0 +1,264 @@
+<div class="page">
+  <nex-menu-list class="sticky-menu">
+    <a
+      nex-menu-item
+      tabindex="0"
+      (click)="scrollToSection('selects')"
+      (keyup.enter)="scrollToSection('selects')"
+      (keydown.enter)="scrollToSection('selects')"
+      [active]="activeSection === 'selects'"
+      [attr.aria-current]="activeSection === 'selects' ? 'page' : null"
+    >
+      Selects
+    </a>
+    <a
+      nex-menu-item
+      tabindex="0"
+      (click)="scrollToSection('inputs')"
+      (keyup.enter)="scrollToSection('inputs')"
+      (keydown.enter)="scrollToSection('inputs')"
+      [active]="activeSection === 'inputs'"
+      [attr.aria-current]="activeSection === 'inputs' ? 'page' : null"
+    >
+      Inputs
+    </a>
+    <a
+      nex-menu-item
+      tabindex="0"
+      (click)="scrollToSection('radios')"
+      (keyup.enter)="scrollToSection('radios')"
+      (keydown.enter)="scrollToSection('radios')"
+      [active]="activeSection === 'radios'"
+      [attr.aria-current]="activeSection === 'radios' ? 'page' : null"
+    >
+      Radios
+    </a>
+    <a
+      nex-menu-item
+      tabindex="0"
+      (click)="scrollToSection('checkboxes')"
+      (keyup.enter)="scrollToSection('checkboxes')"
+      (keydown.enter)="scrollToSection('checkboxes')"
+      [active]="activeSection === 'checkboxes'"
+      [attr.aria-current]="activeSection === 'checkboxes' ? 'page' : null"
+    >
+      Checkboxes
+    </a>
+    <a
+      nex-menu-item
+      tabindex="0"
+      (click)="scrollToSection('buttons')"
+      (keyup.enter)="scrollToSection('buttons')"
+      (keydown.enter)="scrollToSection('buttons')"
+      [active]="activeSection === 'buttons'"
+      [attr.aria-current]="activeSection === 'buttons' ? 'page' : null"
+    >
+      Buttons
+    </a>
+  </nex-menu-list>
+
+  <nex-card>
+    <div #selectsSection>
+      <nex-select
+        placeholder="Select one..."
+        [options]="[
+          { value: '1', label: 'Opção 1' },
+          { value: '2', label: 'Opção 2' },
+          { value: '3', label: 'Opção 3' }
+        ]"
+      >
+        <nex-label
+          >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni harum
+          alias asperiores adipisci animi! Nisi voluptatum et voluptatibus
+          perferendis quod, quo illo suscipit sint ullam rerum vel, ab, fugiat
+          iure.</nex-label
+        >
+      </nex-select>
+    </div>
+    <div>
+      <nex-select
+        placeholder="Select one..."
+        [disabled]="true"
+        [options]="[
+          { value: '1', label: 'Opção 1' },
+          { value: '2', label: 'Opção 2' },
+          { value: '3', label: 'Opção 3' }
+        ]"
+      ></nex-select>
+    </div>
+    <div>
+      <nex-select
+        placeholder="Select one..."
+        [options]="[
+          { value: '1', label: 'Opção 1' },
+          { value: '2', label: 'Opção 2' },
+          { value: '3', label: 'Opção 3' }
+        ]"
+      >
+        <nex-error>Test error message</nex-error>
+      </nex-select>
+    </div>
+    <hr />
+    <div #inputsSection>
+      <nex-input
+        placeholder="Test placeholder"
+        value="Test value"
+        label="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae mollitia error quia saepe, veritatis omnis vel ratione libero. Illum perspiciatis ut officia delectus cumque nisi sequi ab? Distinctio, eveniet neque."
+      ></nex-input>
+    </div>
+    <div>
+      <nex-input
+        placeholder="Test placeholder"
+        value="Test value"
+        label="Lorem ipsum dolor sit"
+      >
+        <nex-error>Test error message</nex-error>
+      </nex-input>
+    </div>
+    <div>
+      <nex-input
+        [disabled]="true"
+        placeholder="Test placeholder"
+        value="Test value"
+      ></nex-input>
+    </div>
+    <div>
+      <nex-input
+        type="number"
+        placeholder="Test placeholder"
+        value="Test number"
+      ></nex-input>
+    </div>
+    <hr />
+    <div #radiosSection>
+      <nex-radio-group
+        name="group1"
+        [options]="[
+          { value: 'value1', label: 'Value normal' },
+          { value: 'value2', label: 'Value selected' }
+        ]"
+        value="value2"
+      ></nex-radio-group>
+    </div>
+    <div>
+      <nex-radio-group
+        name="group3"
+        [options]="[
+          { value: 'value1', label: 'Value error' },
+          { value: 'value2', label: 'Value error selected' }
+        ]"
+        value="value2"
+      >
+        <nex-error>Test error message</nex-error>
+      </nex-radio-group>
+    </div>
+    <div>
+      <nex-radio-group
+        name="group4"
+        [options]="[
+          { value: 'value3', label: 'Value normal 4' },
+          { value: 'value4', label: 'Value disabled selected 4' }
+        ]"
+        value="value4"
+      ></nex-radio-group>
+    </div>
+    <div>
+      <nex-radio-group
+        name="group4"
+        value="value4"
+        [options]="[
+          { value: 'value3', label: 'Value all disabled' },
+          { value: 'value4', label: 'Value all disabled' }
+        ]"
+        [disabled]="true"
+      ></nex-radio-group>
+    </div>
+    <hr />
+    <div #checkboxesSection>
+      <nex-checkbox label="Test checkbox"></nex-checkbox>
+    </div>
+    <div>
+      <nex-checkbox label="Test checkbox" [checked]="true"></nex-checkbox>
+    </div>
+    <div>
+      <nex-checkbox label="Test checkbox" [disabled]="true"></nex-checkbox>
+    </div>
+    <div>
+      <nex-checkbox label="Test checkbox">
+        <nex-error>Test error message</nex-error>
+      </nex-checkbox>
+    </div>
+
+    <div>
+      <nex-checkbox
+        label="Test checkbox"
+        [checked]="true"
+        [disabled]="true"
+      ></nex-checkbox>
+    </div>
+    <hr />
+    <div #buttonsSection class="button-group">
+      <button nex-button theme="primary">
+        <nex-icon icon="apps"></nex-icon>primary
+      </button>
+      <button nex-button theme="primary" size="lg">
+        <nex-icon icon="servers"></nex-icon>primary lg
+      </button>
+
+      <button nex-button theme="primary" [disabled]="true" size="md">
+        primary md disabled
+      </button>
+      <button nex-button theme="secondary">secondary</button>
+      <button nex-button theme="destructive">destructive</button>
+    </div>
+    <div class="button-group">
+      <button nex-button theme="primary" href="#">
+        <nex-icon icon="apps"></nex-icon>primary href
+      </button>
+      <button nex-button theme="primary" routerLink="/">
+        <nex-icon icon="servers"></nex-icon>primary routerLink
+      </button>
+
+      <button nex-button theme="primary" [disabled]="true">
+        primary disabled
+      </button>
+
+      <button nex-button theme="primary" [lightMode]="true">
+        primary lightMode
+      </button>
+      <button nex-button theme="secondary">secondary</button>
+      <button nex-button theme="destructive">destructive</button>
+    </div>
+
+    <div class="button-group">
+      <button nex-button theme="primary" variant="outline">
+        <nex-icon icon="apps"></nex-icon>primary outline
+      </button>
+      <button nex-button theme="primary" variant="outline" [disabled]="true">
+        primary outline disabled
+      </button>
+      <button nex-button theme="secondary" variant="outline">
+        secondary outline
+      </button>
+      <button nex-button theme="destructive" variant="outline">
+        destructive outline
+      </button>
+    </div>
+
+    <div class="button-group">
+      <button nex-button theme="primary" variant="hollow">
+        primary hollow
+      </button>
+      <button nex-button theme="primary" variant="hollow" [disabled]="true">
+        primary hollow disabled
+      </button>
+
+      <button nex-button theme="secondary" variant="hollow">
+        secondary hollow
+      </button>
+      <button nex-button theme="destructive" variant="hollow">
+        destructive hollow
+      </button>
+    </div>
+  </nex-card>
+</div>

@@ -1,0 +1,29 @@
+<nex-card class="step">
+  <div nex-card-header>
+    <h3 class="step__title">What do you need to purchase?</h3>
+  </div>
+
+  <div nex-card-body>
+    <div class="step__content">
+      <nex-radio-group
+        name="schema-options"
+        [options]="options"
+        [formControl]="schemaInput"
+      ></nex-radio-group>
+    </div>
+  </div>
+
+  <div nex-card-footer>
+    <div class="step__footer">
+      <a
+        class="step__action"
+        [disabled]="!schemaInput.value"
+        nex-button
+        [routerLink]="['new-request', schemaInput.value]"
+        type="button"
+      >
+        Start
+      </a>
+    </div>
+  </div>
+</nex-card>

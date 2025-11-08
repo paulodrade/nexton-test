@@ -1,0 +1,86 @@
+@for (field of normalizedSchema; track field.id) { @switch(field.type) {
+@case('text') {
+<nex-card>
+  <nex-input
+    [label]="field.label"
+    [required]="field.required"
+    [placeholder]="field.label"
+    [readonly]="false"
+    [formControl]="field.formControl"
+    [name]="field.name"
+  >
+    @if((field.formControl.touched || field.formControl.dirty) &&
+    field.formControl.errors?.['required']) {
+    <nex-error>This field is required.</nex-error>
+    }
+
+    <!-- valid -->
+    @else if ((field.formControl.touched || field.formControl.dirty) &&
+    field.formControl.errors?.['valid']) {
+    <nex-error>The value entered is not valid.</nex-error>
+    }
+
+    <!-- ert -->
+    @else if ((field.formControl.touched || field.formControl.dirty) &&
+    field.formControl.errors?.['ert']) {
+    <nex-error>An unexpected error occurred. Please try again.</nex-error>
+    }
+  </nex-input>
+</nex-card>
+} @case('number') {
+<nex-card>
+  <nex-input
+    [label]="field.label"
+    [required]="field.required"
+    [placeholder]="field.label"
+    [readonly]="false"
+    type="number"
+    [formControl]="field.formControl"
+    [name]="field.name"
+  >
+    @if ((field.formControl.touched || field.formControl.dirty) &&
+    field.formControl.errors?.['required']) {
+    <nex-error>This field is required.</nex-error>
+    }
+
+    <!-- valid -->
+    @else if ((field.formControl.touched || field.formControl.dirty) &&
+    field.formControl.errors?.['valid']) {
+    <nex-error>The value entered is not valid.</nex-error>
+    }
+
+    <!-- ert -->
+    @else if ((field.formControl.touched || field.formControl.dirty) &&
+    field.formControl.errors?.['ert']) {
+    <nex-error>An unexpected error occurred. Please try again.</nex-error>
+    }
+  </nex-input>
+</nex-card>
+} @case('radio') {
+<nex-card>
+  <nex-radio-group
+    [label]="field.label"
+    [required]="field.required"
+    [options]="field.options ?? []"
+    [name]="field.name ?? ''"
+    [formControl]="field.formControl"
+  >
+    @if ((field.formControl.touched || field.formControl.dirty) &&
+    field.formControl.errors?.['required']) {
+    <nex-error>This field is required.</nex-error>
+    }
+
+    <!-- valid -->
+    @else if ((field.formControl.touched || field.formControl.dirty) &&
+    field.formControl.errors?.['valid']) {
+    <nex-error>The value entered is not valid.</nex-error>
+    }
+
+    <!-- ert -->
+    @else if ((field.formControl.touched || field.formControl.dirty) &&
+    field.formControl.errors?.['ert']) {
+    <nex-error>An unexpected error occurred. Please try again.</nex-error>
+    }
+  </nex-radio-group>
+</nex-card>
+} } }

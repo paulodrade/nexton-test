@@ -1,0 +1,9 @@
+/* ==========================================================================
+   = HOST STYLES
+   Styles for the error message component host
+   ========================================================================== */
+:host {
+  font-size: var(--nex-error-font-size, 12px);
+  color: var(--nex-error-color, #ed4c5c);
+  margin-top: var(--nex-error-space, 4px);
+}

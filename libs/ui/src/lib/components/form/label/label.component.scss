@@ -1,0 +1,11 @@
+/* ==========================================================================
+   = LABEL
+   Styles for the label element
+   ========================================================================== */
+.label {
+  line-height: var(--nex-label-label-line-height, 21px);
+  font-size: var(--nex-label-label-font-size, 14px);
+  color: var(--nex-label-label-color, #42454c);
+  margin-bottom: var(--nex-label-label-margin-bottom, 8px);
+  display: block;
+}

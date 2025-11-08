@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+.step {
+  border-radius: 25px;
+  --nex-card-box-padding: 56px 72px;
+  --nex-card-box-gap: 38px;
+
+  &__title {
+    font-style: Bold;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+  }
+
+  &__content,
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__footer {
+    .step__action {
+      min-width: 147px;
+    }
+  }
+
+  ::ng-deep {
+    .radio:has(:checked) {
+      --nex-radio-box-padding-block: 4px;
+      --nex-radio-icon-height: 15px;
+      --nex-radio-box-height: 32px;
+    }
+  }
+}

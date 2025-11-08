@@ -1,0 +1,28 @@
+/* ==========================================================================
+   DARK THEME TOKENS - NexUI Select
+   ========================================================================== */
+
+.nex-theme-dark {
+  // =========================
+  // BORDER COLORS
+  // =========================
+  --nex-select-box-border-color: var(--nex-semantic-border-default);
+  --nex-select-box-border-color-focus: var(--nex-semantic-primary);
+  --nex-select-box-border-color-error: var(--nex-semantic-error);
+
+  // =========================
+  // BACKGROUND & TEXT COLORS
+  // =========================
+  --nex-select-box-bg: var(--nex-semantic-bg-default);
+  --nex-select-box-bg-disabled: var(--nex-color-disabled);
+  --nex-select-label-color-error: var(--nex-semantic-error);
+  --nex-select-label-color-disabled: var(--nex-color-bg-elevated);
+  --nex-select-label-color: var(--nex-color-fg-default);
+
+  // =========================
+  // CHEVRON COLORS
+  // =========================
+  --nex-select-chevron-fill-error: var(--nex-semantic-error);
+  --nex-select-chevron-fill-disabled: var(--nex-color-disabled);
+  --nex-select-chevron-bg: var(--nex-semantic-bg-default);
+}

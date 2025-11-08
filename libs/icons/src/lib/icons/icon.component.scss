@@ -1,0 +1,17 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.icon {
+  height: 100%;
+
+  ::ng-deep svg {
+    height: 100%;
+    width: auto;
+  }
+
+  &--spin {
+    animation: spin 1.5s linear infinite;
+  }
+}

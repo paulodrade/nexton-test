@@ -1,0 +1,40 @@
+:host {
+  .sticky-menu {
+    position: sticky;
+    top: 40px;
+    z-index: 10;
+    background: inherit;
+
+    a {
+      cursor: pointer;
+    }
+  }
+  display: block;
+  padding: 40px;
+
+  div + div {
+    margin-top: 20px;
+  }
+}
+
+.checkbox-dark-theme {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  display: flex;
+  align-items: flex-start;
+
+  nex-menu-list {
+    margin-right: 40px;
+  }
+}
+
+.button-group {
+  margin: 0 -8px;
+  button {
+    margin: 8px;
+  }
+}
