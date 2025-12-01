@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -27,22 +27,31 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm" # se usar pnpm/yarn, troca aqui
+          cache: 'npm' # se usar pnpm/yarn, troca aqui
 
       - name: Install dependencies
         run: npm ci
-        # se for pnpm:
+        # Se usar pnpm, ficaria algo assim:
         # run: |
         #   corepack enable
         #   pnpm install --frozen-lockfile
 
-      - name: Build app (Nx)
+      - name: Build app (Nx - web)
         run: npx nx build web --configuration=production
 
-      - name: Upload artifact (dist/apps/web/browser)
+      - name: Flatten dist structure for GitHub Pages
+        run: |
+          # Garante que a pasta de destino exista
+          mkdir -p dist/apps/web
+          # Copia tudo de dist/apps/web/browser para dist/apps/web
+          cp -r dist/apps/web/browser/* dist/apps/web/
+          # Cria 404.html para fallback das rotas da SPA
+          cp dist/apps/web/index.html dist/apps/web/404.html
+
+      - name: Upload artifact (dist/apps/web)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/apps/web/browser
+          path: dist/apps/web
 
   deploy:
     needs: build
