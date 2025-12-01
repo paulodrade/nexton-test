@@ -1,7 +1,6 @@
 import {
   ApplicationConfig,
   importProvidersFrom,
-  isDevMode,
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection,
 } from '@angular/core';
@@ -11,6 +10,8 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '@nexton-test/core/mocks';
 
+const isDevModeEnabled = true; // isDevMode();
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -19,7 +20,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()), // provides HttpClient with Fetch API
 
     // 👇 use the mock only in dev mode
-    ...(isDevMode()
+    ...(isDevModeEnabled
       ? [
           importProvidersFrom(
             HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
