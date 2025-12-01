@@ -27,25 +27,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm" # ou "pnpm" / "yarn" se você usa outro
+          cache: "npm" # se usar pnpm/yarn, troca aqui
 
       - name: Install dependencies
         run: npm ci
-        # se usar pnpm:
+        # se for pnpm:
         # run: |
         #   corepack enable
         #   pnpm install --frozen-lockfile
 
       - name: Build app (Nx)
         run: npx nx build web --configuration=production
-        # troque "web" pelo nome do app
-        # e ajuste a config se necessário
 
-      - name: Upload artifact
+      - name: Upload artifact (dist/apps/web/browser)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/apps/web
-          # ajuste se seu outputPath for diferente
+          path: dist/apps/web/browser
 
   deploy:
     needs: build
