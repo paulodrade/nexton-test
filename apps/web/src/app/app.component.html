@@ -1,11 +1,17 @@
-<label class="checkbox-dark-theme">
-  <input
-    type="checkbox"
-    [(ngModel)]="isDarkThemeEnabled"
-    (ngModelChange)="toggleDarkTheme()"
-  />
-  Enable Dark Theme
-</label>
+<div class="util-links">
+  <label class="checkbox-dark-theme">
+    <input
+      type="checkbox"
+      [(ngModel)]="isDarkThemeEnabled"
+      (ngModelChange)="toggleDarkTheme()"
+    />
+    Enable Dark Theme
+  </label>
+  <a routerLinkActive="util-links--active" routerLink="design-system"
+    >Design System</a
+  >
+  <a routerLinkActive="util-links--active" routerLink="wizard">Wizard</a>
+</div>
 
 <div class="router-content">
   <router-outlet></router-outlet>

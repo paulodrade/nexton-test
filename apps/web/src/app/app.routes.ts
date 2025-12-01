@@ -2,6 +2,11 @@ import { Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
   {
+    path: '',
+    redirectTo: 'wizard',
+    pathMatch: 'full',
+  },
+  {
     path: 'wizard',
     loadChildren: () =>
       import('./wizard/wizard.routes').then((m) => m.WIZARD_ROUTES),
