@@ -1,7 +1,13 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, timer, throwError } from 'rxjs';
-import { retryWhen, concatMap, map } from 'rxjs/operators';
+import { Observable, timer, throwError, of } from 'rxjs';
+import {
+  retryWhen,
+  concatMap,
+  map,
+  switchMap,
+  catchError,
+} from 'rxjs/operators';
 
 import { Schema } from '../interfaces/form-schema.interfaces';
 
@@ -62,11 +68,12 @@ export class SchemaService {
   getSchemas(): Observable<Schema[]> {
     return this.http.get<Schema[]>(`${this.base}/schemas`).pipe(
       this.retryBackoff(2, 300),
-      concatMap((schemas) =>
+      switchMap((schemas) =>
         schemas && schemas.length
-          ? [schemas]
+          ? of(schemas)
           : this.http.get<Schema[]>('/assets/mocks/schemas.json')
-      )
+      ),
+      catchError(() => this.http.get<Schema[]>('/assets/mocks/schemas.json'))
     );
   }
 
