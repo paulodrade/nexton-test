@@ -60,9 +60,14 @@ export class SchemaService {
    * @returns Observable emitting an array of Schema objects.
    */
   getSchemas(): Observable<Schema[]> {
-    return this.http
-      .get<Schema[]>(`${this.base}/schemas`)
-      .pipe(this.retryBackoff(2, 300));
+    return this.http.get<Schema[]>(`${this.base}/schemas`).pipe(
+      this.retryBackoff(2, 300),
+      concatMap((schemas) =>
+        schemas && schemas.length
+          ? [schemas]
+          : this.http.get<Schema[]>('/assets/mocks/schemas.json')
+      )
+    );
   }
 
   /**

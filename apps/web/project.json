@@ -26,6 +26,11 @@
             "glob": "**/*",
             "input": "libs/icons/public",
             "output": "/assets/icons"
+          },
+          {
+            "glob": "schemas.json",
+            "input": "libs/core/src/lib/mocks",
+            "output": "/assets/mocks"
           }
         ],
         "styles": [
