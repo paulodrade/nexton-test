@@ -15,6 +15,7 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/web/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
+        "baseHref": "/nexton-test/",
         "assets": [
           {
             "glob": "**/*",
